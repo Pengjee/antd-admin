@@ -7,7 +7,7 @@ import ProDescriptions from '@ant-design/pro-descriptions';
 import CreateForm from './components/CreateForm';
 import UpdateForm from './components/UpdateForm';
 import { queryRule, updateRule, addRule, removeRule } from './service';
-/**
+/*
  * 添加节点
  * @param fields
  */
@@ -99,12 +99,13 @@ const TableList = () => {
     {
       title: '描述',
       dataIndex: 'desc',
+	    hideInForm: true,
       valueType: 'textarea',
     },
     {
       title: '服务调用次数',
       dataIndex: 'callNo',
-      sorter: true,
+      sorter: false,
       hideInForm: true,
       renderText: (val) => `${val} 万`,
     },
@@ -134,7 +135,7 @@ const TableList = () => {
     {
       title: '上次调度时间',
       dataIndex: 'updatedAt',
-      sorter: true,
+      sorter: false,
       valueType: 'dateTime',
       hideInForm: true,
       renderFormItem: (item, { defaultRender, ...rest }, form) => {
@@ -174,8 +175,9 @@ const TableList = () => {
   return (
     <PageContainer>
       <ProTable
-        headerTitle="查询表格"
+        headerTitle="模版管理"
         actionRef={actionRef}
+        postData={[]}
         rowKey="key"
         search={{
           labelWidth: 120,
@@ -185,6 +187,7 @@ const TableList = () => {
             <PlusOutlined /> 新建
           </Button>,
         ]}
+        options={false}
         request={(params, sorter, filter) => queryRule({ ...params, sorter, filter })}
         columns={columns}
         rowSelection={{

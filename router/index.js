@@ -158,12 +158,12 @@ export const router = [ {
 					name: '自定义页面',
 					icon: 'smile',
 					path: '/domestic',
-					routes: [ {
+					routes: [{
 						name: '自定义',
 						icon: 'smile',
 						path: '/domestic/template',
 						component: './domestic/TemplateRecords',
-					} ]
+					}]
 				},
 				{
 					component: '404',

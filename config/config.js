@@ -26,6 +26,12 @@ export default defineConfig({
   routes: [
     ...router,
     {
+      name: '基础表单',
+      icon: 'smile',
+      path: '/domestic/template/form',
+      component: './domestic/TemplateForm',
+    },
+    {
       name: '查询表格',
       icon: 'smile',
       path: '/domestic/template',
