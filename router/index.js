@@ -163,6 +163,12 @@ export const router = [ {
 						icon: 'smile',
 						path: '/domestic/template',
 						component: './domestic/TemplateRecords',
+					}, {
+						name: '基础表单',
+						icon: 'smile',
+						path: '/domestic/template/form/:type',
+						hideInMenu: true,
+						component: './domestic/TemplateForm',
 					}]
 				},
 				{

@@ -24,19 +24,7 @@ export default defineConfig({
   },
   // umi routes: https://umijs.org/docs/routing
   routes: [
-    ...router,
-    {
-      name: '基础表单',
-      icon: 'smile',
-      path: '/domestic/template/form',
-      component: './domestic/TemplateForm',
-    },
-    {
-      name: '查询表格',
-      icon: 'smile',
-      path: '/domestic/template',
-      component: './domestic/TemplateRecords',
-    },
+    ...router
   ],
   // Theme for antd: https://ant.design/docs/react/customize-theme-cn
   theme: {

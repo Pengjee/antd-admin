@@ -82,7 +82,7 @@ const BasicLayout = (props) => {
           {
             path : '/',
             breadcrumbName : formatMessage ({
-              id : 'menu.home',
+              id : '首页',
             }),
           },
           ...routers,
