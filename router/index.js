@@ -155,16 +155,16 @@ export const router = [ {
 					],
 				},
 				{
-					name: '自定义页面',
+					name: '国内短信',
 					icon: 'smile',
 					path: '/domestic',
 					routes: [{
-						name: '自定义',
+						name: '模版管理',
 						icon: 'smile',
 						path: '/domestic/template',
 						component: './domestic/TemplateRecords',
 					}, {
-						name: '基础表单',
+						name: '模版',
 						icon: 'smile',
 						path: '/domestic/template/form/:type',
 						hideInMenu: true,

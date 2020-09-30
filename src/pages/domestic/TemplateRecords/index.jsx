@@ -9,28 +9,22 @@ import ProTable from '@ant-design/pro-table';
 import { queryRule } from './service';
 
 const TableList = () => {
-	const columns = [ {
-		title: '规则名称',
-		dataIndex: 'name',
-		tip: '规则名称是唯一的 key',
-		formItemProps: {
-			rules: [ {
-				required: true,
-				message: '规则名称为必填项',
-			} ],
-		}
+	const columns = [{
+		title: '模版ID',
+		dataIndex: 'tplId'
 	}, {
-		title: '描述',
-		dataIndex: 'desc',
-		valueType: 'textarea',
+		title: '模版名称/ID',
+		dataIndex: 'name'
 	}, {
-		title: '服务调用次数',
-		dataIndex: 'callNo',
-		sorter: false,
-		renderText: (val) => `${val} 万`,
+		title: '模版内容',
+		dataIndex: 'content'
 	}, {
-		title: '状态',
+		title: '创建时间',
+		dataIndex: 'createTime'
+	}, {
+		title: '审核状态',
 		dataIndex: 'status',
+		valueType: 'textarea',
 		valueEnum: {
 			0: {
 				text: '关闭',
@@ -47,33 +41,17 @@ const TableList = () => {
 			3: {
 				text: '异常',
 				status: 'Error',
-			},
-		},
+			}
+		}
 	}, {
-		title: '上次调度时间',
-		dataIndex: 'updatedAt',
-		valueType: 'dateTime',
-		renderFormItem: (item, {defaultRender, ...rest}, form) => {
-			const status = form.getFieldValue('status');
-
-			if (`${status}` === '0') {
-				return false;
-			}
-
-			if (`${status}` === '3') {
-				return <Input {...rest} placeholder="请输入异常原因！"/>;
-			}
-
-			return defaultRender(item);
-		},
+		title: '归属应用',
+		dataIndex: 'app'
 	}, {
 		title: '操作',
 		dataIndex: 'option',
 		valueType: 'option',
 		render: (_, record) => (
-			<>
-				操作
-			</>
+			<Button>修改</Button>
 		)
 	} ]
 
